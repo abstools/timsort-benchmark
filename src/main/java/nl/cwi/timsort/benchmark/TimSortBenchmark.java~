@@ -1,0 +1,52 @@
+package nl.cwi.timsort.benchmark;
+
+import java.util.Comparator;
+import java.util.concurrent.TimeUnit;
+
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Fork;
+import org.openjdk.jmh.annotations.Measurement;
+import org.openjdk.jmh.annotations.Mode;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.Warmup;
+
+@Fork(1)
+// @BenchmarkMode({Mode.Throughput, Mode.SampleTime})
+@BenchmarkMode({Mode.Throughput,Mode.AverageTime})
+@Warmup(iterations = 32, time = 64, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 64, time = 128, timeUnit = TimeUnit.MILLISECONDS)
+@State(Scope.Benchmark)
+public class TimSortBenchmark {
+    private static final Comparator<Object> NATURAL_ORDER =
+            new Comparator<Object>() {
+                @SuppressWarnings("unchecked")
+                public int compare(Object first, Object second) {
+                    return ((Comparable<Object>)first).compareTo(second);
+                }
+            };
+            
+  Object[] data;
+
+  /*
+  @Setup
+  public void setUp() {
+    // Prepare your target array
+	  data = ArrayBuilder.WORST_CASE.build(1000000);
+  }*/
+
+  @Benchmark
+  public void stijnsort_all_equal() {
+	  data = ArrayBuilder.WORST_CASE.build(1000000);
+	  StijnSort.sort(data, NATURAL_ORDER);
+  }
+
+  @Benchmark
+  public void timsort_all_equal() {
+	  data = ArrayBuilder.WORST_CASE.build(1000000);
+	  TimSort.sort(data, NATURAL_ORDER);
+  }
+
+}
