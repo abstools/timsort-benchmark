@@ -5,4 +5,4 @@
 
 mvn clean install
 cd target
-java -jar timsort-benchmark-standalone.jar
+java -Xmx8192m -jar timsort-benchmark-standalone.jar
