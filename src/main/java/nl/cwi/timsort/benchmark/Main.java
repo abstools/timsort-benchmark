@@ -13,20 +13,31 @@ public class Main {
         new Class[] {
 
         // First default Java ones
-        TimSortBenchmarkAllEqualInt.class, TimSortBenchmarkAscending10RndAtEndInt.class,
-        TimSortBenchmarkAscending3RndExchInt.class, TimSortBenchmarkAscendingInt.class,
-        TimSortBenchmarkDescendingInt.class, TimSortBenchmarkDupsGaloreInt.class,
-        TimSortBenchmarkPsuedoAscendingString.class, TimSortBenchmarkRandomBigInt.class,
-        TimSortBenchmarkRandomInt.class, TimSortBenchmarkRandomWithDupsInt.class,
+        TimSortBenchmarkAllEqualInt.class,
+        TimSortBenchmarkAscending10RndAtEndInt.class,
+        TimSortBenchmarkAscending3RndExchInt.class,
+        TimSortBenchmarkAscendingInt.class,
+        TimSortBenchmarkDescendingInt.class,
+        TimSortBenchmarkDupsGaloreInt.class,
+        TimSortBenchmarkPsuedoAscendingString.class,
+        TimSortBenchmarkRandomBigInt.class,
+        TimSortBenchmarkRandomInt.class,
+        TimSortBenchmarkRandomWithDupsInt.class,
         TimSortBenchmarkWorstCase.class,
 
         // Then Stijn's work
-        StijnSortBenchmarkAllEqualInt.class, StijnSortBenchmarkAscending10RndAtEndInt.class,
-        StijnSortBenchmarkAscending3RndExchInt.class, StijnSortBenchmarkAscendingInt.class,
-        StijnSortBenchmarkDescendingInt.class, StijnSortBenchmarkDupsGaloreInt.class,
-        StijnSortBenchmarkPsuedoAscendingString.class, StijnSortBenchmarkRandomBigInt.class,
-        StijnSortBenchmarkRandomInt.class, StijnSortBenchmarkRandomWithDupsInt.class,
-        StijnSortBenchmarkWorstCase.class};
+        StijnSortBenchmarkAllEqualInt.class,
+        StijnSortBenchmarkAscending10RndAtEndInt.class,
+        StijnSortBenchmarkAscending3RndExchInt.class,
+        StijnSortBenchmarkAscendingInt.class,
+        StijnSortBenchmarkDescendingInt.class,
+        StijnSortBenchmarkDupsGaloreInt.class,
+        StijnSortBenchmarkPsuedoAscendingString.class,
+        StijnSortBenchmarkRandomBigInt.class,
+        StijnSortBenchmarkRandomInt.class,
+        StijnSortBenchmarkRandomWithDupsInt.class,
+        StijnSortBenchmarkWorstCase.class
+        };
 
     for (Class<?> clazz : classes) {
       String benchmarkName = clazz.getSimpleName();
