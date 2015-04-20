@@ -2,6 +2,7 @@ package nl.cwi.timsort.benchmark;
 
 import java.util.Comparator;
 
+import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Setup;
 
 public abstract class AbstractBenchmark {
@@ -20,10 +21,11 @@ public abstract class AbstractBenchmark {
 
   @Setup
   public void setUp() {
-    rawData = getBuilderType().build(LENGTH);
+	  rawData = getBuilderType().build(LENGTH);
   }
-
-  protected void copyData() {
+  
+  @Setup(Level.Invocation)
+  public void copyData() {
     data = new Object[rawData.length];
     System.arraycopy(rawData, 0, data, 0, rawData.length);
   }

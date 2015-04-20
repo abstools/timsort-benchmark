@@ -20,7 +20,6 @@ public class StijnSortBenchmarkWorstCase extends AbstractBenchmark {
 
   @Benchmark
   public Object[] timsortWorstCase() {
-    copyData();
     StijnSort.sort(data, NATURAL_ORDER);
     return data;
   }

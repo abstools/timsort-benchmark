@@ -20,7 +20,6 @@ public class StijnSortBenchmarkRandomWithDupsInt extends AbstractBenchmark {
 
   @Benchmark
   public Object[] timsortRandomWithDupsInt() {
-    copyData();
     StijnSort.sort(data, NATURAL_ORDER);
     return data;
   }

@@ -20,7 +20,6 @@ public class TimSortBenchmarkDescendingInt extends AbstractBenchmark {
 
   @Benchmark
   public Object[] timsortDescendingInt() {
-    copyData();
     TimSort.sort(data, NATURAL_ORDER);
     return data;
   }

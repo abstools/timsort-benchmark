@@ -20,7 +20,6 @@ public class StijnSortBenchmarkAllEqualInt extends AbstractBenchmark {
 
   @Benchmark
   public Object[] timsortAllEqualInt() {
-    copyData();
     StijnSort.sort(data, NATURAL_ORDER);
     return data;
   }
