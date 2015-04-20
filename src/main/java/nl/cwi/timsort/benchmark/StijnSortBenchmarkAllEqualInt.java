@@ -19,9 +19,10 @@ import org.openjdk.jmh.annotations.Warmup;
 public class StijnSortBenchmarkAllEqualInt extends AbstractBenchmark {
 
   @Benchmark
-  public void timsortAllEqualInt() {
+  public Object[] timsortAllEqualInt() {
     copyData();
     StijnSort.sort(data, NATURAL_ORDER);
+    return data;
   }
 
   @Override

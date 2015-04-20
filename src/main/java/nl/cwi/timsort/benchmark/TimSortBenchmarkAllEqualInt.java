@@ -19,9 +19,10 @@ import org.openjdk.jmh.annotations.Warmup;
 public class TimSortBenchmarkAllEqualInt extends AbstractBenchmark {
 
   @Benchmark
-  public void timsortAllEqualInt() {
+  public Object[] timsortAllEqualInt() {
     copyData();
     TimSort.sort(data, NATURAL_ORDER);
+    return data;
   }
 
   @Override

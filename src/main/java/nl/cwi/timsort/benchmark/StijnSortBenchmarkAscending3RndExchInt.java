@@ -19,9 +19,10 @@ import org.openjdk.jmh.annotations.Warmup;
 public class StijnSortBenchmarkAscending3RndExchInt extends AbstractBenchmark {
 
   @Benchmark
-  public void timsortAscending3RndExchInt() {
+  public Object[] timsortAscending3RndExchInt() {
     copyData();
     StijnSort.sort(data, NATURAL_ORDER);
+    return data;
   }
 
   @Override

@@ -19,9 +19,10 @@ import org.openjdk.jmh.annotations.Warmup;
 public class StijnSortBenchmarkDupsGaloreInt extends AbstractBenchmark {
 
   @Benchmark
-  public void timsortDupsGaloreInt() {
+  public Object[] timsortDupsGaloreInt() {
     copyData();
     StijnSort.sort(data, NATURAL_ORDER);
+    return data;
   }
 
   @Override

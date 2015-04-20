@@ -19,9 +19,10 @@ import org.openjdk.jmh.annotations.Warmup;
 public class StijnSortBenchmarkWorstCase extends AbstractBenchmark {
 
   @Benchmark
-  public void timsortWorstCase() {
+  public Object[] timsortWorstCase() {
     copyData();
     StijnSort.sort(data, NATURAL_ORDER);
+    return data;
   }
 
   @Override

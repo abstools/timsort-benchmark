@@ -19,9 +19,10 @@ import org.openjdk.jmh.annotations.Warmup;
 public class TimSortBenchmarkDescendingInt extends AbstractBenchmark {
 
   @Benchmark
-  public void timsortDescendingInt() {
+  public Object[] timsortDescendingInt() {
     copyData();
     TimSort.sort(data, NATURAL_ORDER);
+    return data;
   }
 
   @Override
